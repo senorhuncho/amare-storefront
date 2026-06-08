@@ -40,7 +40,7 @@ export const mockProducts: Product[] = [
     routineStep: "gloss",
     shadeSummary: "Shade summary pending verification",
     shortDescription:
-      "A polished gloss placeholder meant to represent easy daily shine in the AMARE lineup.",
+      "A polished gloss placeholder meant to represent easy daily shine in the AMARÉ lineup.",
     title: "Classic Lip Gloss",
   },
   {
@@ -128,7 +128,7 @@ export const mockProducts: Product[] = [
     badge: "Giftable Set",
     category: "Sets",
     currencyCode: "USD",
-    finish: "soft-gloss",
+    finish: "set",
     handle: "soft-glam-lip-set",
     id: "mock-product-soft-glam-lip-set",
     imageDescriptor: {
@@ -142,11 +142,68 @@ export const mockProducts: Product[] = [
       "A mock bundle entry representing soft-glam lip pairings and easy giftable merchandising.",
     title: "Soft Glam Lip Set",
   },
+  {
+    availability: "in-stock",
+    badge: "Featured Gift",
+    category: "Sets",
+    currencyCode: "USD",
+    finish: "set",
+    handle: "amare-ultimate-lip-collection",
+    id: "mock-product-amare-ultimate-lip-collection",
+    imageDescriptor: {
+      label: "AMARÉ Ultimate Lip Collection placeholder",
+      note: "Large-format gifting concept with premium packaging cues.",
+      tone: "champagne",
+    },
+    price: 48,
+    shadeSummary: "Collection details pending verification",
+    shortDescription:
+      "A provisional premium set positioned as the most complete gifting moment in the mock catalog.",
+    title: "AMARÉ Ultimate Lip Collection",
+  },
+  {
+    availability: "in-stock",
+    badge: "Routine Set",
+    category: "Sets",
+    currencyCode: "USD",
+    finish: "set",
+    handle: "lip-prep-and-polish-set",
+    id: "mock-product-lip-prep-and-polish-set",
+    imageDescriptor: {
+      label: "Lip Prep and Polish Set placeholder",
+      note: "Care-led set concept built around prep and pairing.",
+      tone: "ivory",
+    },
+    price: 24,
+    shadeSummary: "Set details pending verification",
+    shortDescription:
+      "A provisional care-focused set concept designed for prep-first gifting and routine building.",
+    title: "Lip Prep & Polish Set",
+  },
+  {
+    availability: "in-stock",
+    badge: "Digital Gift",
+    category: "Gift Card",
+    currencyCode: "USD",
+    finish: "gift-card",
+    handle: "amare-cosmetics-gift-card",
+    id: "mock-product-amare-cosmetics-gift-card",
+    imageDescriptor: {
+      label: "AMARÉ Cosmetics Gift Card placeholder",
+      note: "Gift-card concept with a soft editorial finish.",
+      tone: "blush",
+    },
+    price: 25,
+    shadeSummary: "Value and issuance pending verification",
+    shortDescription:
+      "A provisional gift-card entry for easy gifting when the final connected store options are confirmed.",
+    title: "AMARÉ Cosmetics Gift Card",
+  },
 ];
 
 export const mockCollections: Collection[] = [
   {
-    description: "Placeholder best-seller collection for Milestone 1 previewing.",
+    description: "Placeholder best-seller collection for homepage previewing.",
     handle: "best-sellers",
     id: "mock-collection-best-sellers",
     productHandles: mockProducts.map((product) => product.handle),
@@ -157,7 +214,7 @@ export const mockCollections: Collection[] = [
     handle: "lips",
     id: "mock-collection-lips",
     productHandles: mockProducts
-      .filter((product) => product.category !== "Sets")
+      .filter((product) => !["Sets", "Gift Card"].includes(product.category))
       .map((product) => product.handle),
     title: "Lips",
   },
@@ -166,7 +223,7 @@ export const mockCollections: Collection[] = [
     handle: "sets-gifts",
     id: "mock-collection-sets-gifts",
     productHandles: mockProducts
-      .filter((product) => product.category === "Sets")
+      .filter((product) => ["Sets", "Gift Card"].includes(product.category))
       .map((product) => product.handle),
     title: "Sets & Gifts",
   },

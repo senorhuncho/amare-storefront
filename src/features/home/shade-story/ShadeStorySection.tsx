@@ -32,7 +32,7 @@ export function ShadeStorySection({ products }: Readonly<ShadeStorySectionProps>
     <section className="bg-[linear-gradient(180deg,rgba(233,187,183,0.08),rgba(68,23,34,0.06))] py-[4.75rem] sm:py-[5.5rem] lg:py-[7rem]" id="shade-story">
       <Container>
         <SectionHeader
-          description="Explore color families, finishes and suggested pairings before discovering your final AMARE combination."
+          description="Explore color families, finishes and suggested pairings before discovering your final AMARÉ combination."
           eyebrow="FIND YOUR TONE"
           title="A shade for every lip mood."
         />

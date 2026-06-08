@@ -8,7 +8,9 @@ export type ProductFinish =
   | "cream"
   | "balm"
   | "care"
-  | "liner";
+  | "liner"
+  | "set"
+  | "gift-card";
 
 export type RoutineStep = "prep" | "define" | "gloss";
 
