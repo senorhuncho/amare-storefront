@@ -2,6 +2,16 @@ export type CurrencyCode = "USD";
 
 export type ProductAvailability = "in-stock" | "sold-out";
 
+export type ProductFinish =
+  | "glass-shine"
+  | "soft-gloss"
+  | "cream"
+  | "balm"
+  | "care"
+  | "liner";
+
+export type RoutineStep = "prep" | "define" | "gloss";
+
 export type ProductImageDescriptor = {
   label: string;
   note: string;
@@ -13,10 +23,12 @@ export type Product = {
   badge?: string;
   category: string;
   currencyCode: CurrencyCode;
+  finish: ProductFinish;
   handle: string;
   id: string;
   imageDescriptor: ProductImageDescriptor;
   price: number;
+  routineStep?: RoutineStep;
   shadeSummary?: string;
   shortDescription: string;
   title: string;

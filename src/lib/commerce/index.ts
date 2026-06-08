@@ -7,5 +7,7 @@ export type {
   CurrencyCode,
   Product,
   ProductAvailability,
+  ProductFinish,
   ProductImageDescriptor,
+  RoutineStep,
 } from "@/lib/commerce/types";
