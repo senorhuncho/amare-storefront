@@ -60,8 +60,8 @@ export function ProductCardActions({
   };
 
   return (
-    <div className="space-y-3">
-      <div className="flex items-center gap-3">
+    <div className="space-y-2.5">
+      <div className="flex items-center gap-2.5">
         <Button disabled={!available} fullWidth onClick={handleQuickAdd} size="sm">
           <ShoppingBag className="h-4 w-4" />
           {available ? "Quick Add" : "Sold Out"}
@@ -69,7 +69,7 @@ export function ProductCardActions({
         <IconButton
           aria-label={wishlisted ? "Remove from wishlist preview" : "Save to wishlist preview"}
           className={cn(
-            "shrink-0",
+            "shrink-0 bg-ivory",
             wishlisted && "border-border bg-blush/50 text-wine hover:bg-blush",
           )}
           onClick={handleWishlistToggle}
@@ -79,7 +79,7 @@ export function ProductCardActions({
           <Heart className={cn("h-4 w-4", wishlisted && "fill-current")} />
         </IconButton>
       </div>
-      <p aria-live="polite" className="min-h-5 text-xs leading-5 text-muted">
+      <p aria-live="polite" className="min-h-10 text-[0.74rem] leading-5 text-muted">
         {message}
       </p>
     </div>

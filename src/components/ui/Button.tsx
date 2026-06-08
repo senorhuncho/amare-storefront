@@ -46,12 +46,11 @@ const sizeClasses: Record<ButtonSize, string> = {
 };
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary:
-    "bg-wine text-porcelain shadow-[var(--shadow-card)] hover:bg-berry focus-visible:ring-2 focus-visible:ring-wine/20",
+  primary: "bg-wine text-porcelain hover:bg-berry focus-visible:ring-2 focus-visible:ring-wine/20",
   secondary:
-    "border border-border bg-porcelain text-espresso hover:bg-ivory focus-visible:ring-2 focus-visible:ring-wine/15",
+    "border border-border/90 bg-porcelain/88 text-espresso hover:bg-ivory focus-visible:ring-2 focus-visible:ring-wine/15",
   ghost:
-    "bg-transparent text-espresso hover:bg-porcelain/80 focus-visible:ring-2 focus-visible:ring-wine/15",
+    "bg-transparent text-espresso hover:bg-porcelain/72 focus-visible:ring-2 focus-visible:ring-wine/15",
   text: "bg-transparent px-0 text-espresso hover:text-wine",
 };
 
@@ -80,6 +79,7 @@ export function Button(props: Readonly<ButtonProps>) {
 
     return (
       <Link
+        aria-label={props["aria-label"]}
         className={classes}
         href={href}
         prefetch={prefetch}
@@ -97,7 +97,13 @@ export function Button(props: Readonly<ButtonProps>) {
   const { disabled, onClick, type = "button" } = actionProps;
 
   return (
-    <button className={classes} disabled={disabled} onClick={onClick} type={type}>
+    <button
+      aria-label={props["aria-label"]}
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </button>
   );

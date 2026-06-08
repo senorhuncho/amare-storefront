@@ -1,6 +1,7 @@
 import { BestSellersSection } from "@/features/home/best-sellers/BestSellersSection";
 import { CategoryNavigationSection } from "@/features/home/category-navigation/CategoryNavigationSection";
 import { HomeHero } from "@/features/home/hero/HomeHero";
+import { KeychainCampaignSection } from "@/features/home/keychain-campaign/KeychainCampaignSection";
 import { commerceRepository } from "@/lib/commerce";
 
 export default async function HomePage() {
@@ -13,6 +14,7 @@ export default async function HomePage() {
       <HomeHero featuredProduct={featuredProduct} />
       <CategoryNavigationSection />
       <BestSellersSection products={products.slice(0, 4)} />
+      <KeychainCampaignSection product={featuredProduct} />
     </>
   );
 }

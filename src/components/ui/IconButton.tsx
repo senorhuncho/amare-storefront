@@ -40,9 +40,8 @@ function isIconButtonLink(props: IconButtonProps): props is IconButtonLinkProps 
 
 const variantClasses: Record<IconButtonVariant, string> = {
   ghost:
-    "border border-transparent bg-transparent text-espresso hover:border-border hover:bg-porcelain",
-  solid:
-    "border border-border bg-porcelain text-espresso shadow-[var(--shadow-card)] hover:bg-ivory",
+    "border border-transparent bg-transparent text-espresso hover:border-border/70 hover:bg-porcelain/84",
+  solid: "border border-border/80 bg-porcelain/88 text-espresso hover:bg-ivory",
 };
 
 const sizeClasses: Record<IconButtonSize, string> = {

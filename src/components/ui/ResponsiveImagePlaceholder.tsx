@@ -35,33 +35,42 @@ export function ResponsiveImagePlaceholder({
   ratio = "square",
   tone = "ivory",
 }: Readonly<ResponsiveImagePlaceholderProps>) {
+  const accessibleLabel = [label, detail, caption].filter(Boolean).join(". ");
+
   return (
     <div
+      aria-label={accessibleLabel}
       className={cn(
-        "relative overflow-hidden rounded-[var(--radius-frame)] border border-border/80 shadow-[var(--shadow-card)]",
+        "relative overflow-hidden rounded-[var(--radius-frame)] border border-border/70",
         ratioClasses[ratio],
         toneClasses[tone],
         className,
       )}
+      role="img"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/20 to-transparent" />
-      <div className="absolute left-[12%] top-[14%] h-[28%] w-[58%] rounded-full bg-porcelain/55 blur-2xl" />
-      <div className="absolute bottom-[14%] right-[10%] h-[34%] w-[34%] rounded-[38%] border border-porcelain/70 bg-porcelain/35 backdrop-blur-sm" />
-      <div className="absolute bottom-[22%] left-[18%] h-[28%] w-[18%] rounded-[40%] border border-white/45 bg-white/30" />
-      <div className="absolute inset-x-5 bottom-5 rounded-[1.4rem] border border-white/60 bg-white/65 p-4 shadow-[var(--shadow-card)] backdrop-blur">
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted">
-          Placeholder media
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-white/72 via-white/18 to-transparent" />
+      <div aria-hidden="true" className="absolute left-[8%] top-[12%] h-[40%] w-[44%] rounded-full bg-white/45 blur-2xl" />
+      <div aria-hidden="true" className="absolute right-[11%] top-[18%] h-[24%] w-[28%] rounded-[45%] border border-white/45 bg-white/25" />
+      <div aria-hidden="true" className="absolute bottom-[16%] left-[17%] h-[32%] w-[12%] rounded-full border border-white/55 bg-white/30" />
+      <div aria-hidden="true" className="absolute bottom-[12%] right-[14%] h-[30%] w-[24%] rounded-[40%] border border-white/40 bg-white/18" />
+
+      <div className="absolute inset-x-4 top-4 flex items-center justify-between gap-3 sm:inset-x-5">
+        <p className="rounded-full border border-white/55 bg-white/58 px-2.5 py-1 text-[0.56rem] font-semibold uppercase tracking-[0.26em] text-muted backdrop-blur">
+          Mock art
         </p>
-        <p className="mt-2 font-display text-[1.3rem] leading-none tracking-[-0.03em]">
+        {detail ? (
+          <span className="rounded-full border border-white/55 bg-white/58 px-2.5 py-1 text-[0.56rem] font-medium uppercase tracking-[0.22em] text-muted backdrop-blur">
+            {detail}
+          </span>
+        ) : null}
+      </div>
+
+      <div className="absolute inset-x-4 bottom-4 rounded-[1.25rem] border border-white/55 bg-white/68 p-4 backdrop-blur sm:inset-x-5 sm:bottom-5">
+        <p className="font-display text-[1.18rem] leading-[1.02] tracking-[-0.04em] text-espresso sm:text-[1.35rem]">
           {label}
         </p>
-        {caption ? <p className="mt-2 text-sm leading-6 text-muted">{caption}</p> : null}
+        {caption ? <p className="mt-2 text-[0.78rem] leading-5 text-muted sm:text-sm">{caption}</p> : null}
       </div>
-      {detail ? (
-        <span className="absolute right-4 top-4 rounded-full border border-white/70 bg-white/65 px-3 py-1 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-muted backdrop-blur">
-          {detail}
-        </span>
-      ) : null}
     </div>
   );
 }

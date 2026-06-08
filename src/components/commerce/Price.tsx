@@ -10,5 +10,5 @@ export function Price({ amount, className, currencyCode }: Readonly<PriceProps>)
     currency: currencyCode,
   }).format(amount);
 
-  return <span className={className}>{formattedPrice}</span>;
+  return <span className={className ? `${className} tabular-nums` : "tabular-nums"}>{formattedPrice}</span>;
 }

@@ -12,16 +12,24 @@ export function BestSellersSection({
   products,
 }: Readonly<BestSellersSectionProps>) {
   return (
-    <section className="pb-14 pt-8 sm:pb-18 sm:pt-10 lg:pb-24 lg:pt-14" id="best-sellers">
+    <section
+      className="pt-4 pb-[4.75rem] sm:pt-6 sm:pb-[5.5rem] lg:pt-8 lg:pb-[7rem]"
+      id="best-sellers"
+    >
       <Container>
         <SectionHeader
-          action={<Button href="/shop?collection=best-sellers" variant="secondary">Preview Shop</Button>}
-          description="A first look at typed mock products rendered through reusable commerce components, with interaction states ready for the later Shopify milestone."
+          action={
+            <Button href="/shop?collection=best-sellers" variant="secondary">
+              Preview Shop
+            </Button>
+          }
+          description="Four AMARÉ essentials chosen for easy layering, everyday shine and effortless gifting."
+          divider
           eyebrow="BEST SELLERS"
           title="Your next lip obsession"
         />
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-5 xl:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

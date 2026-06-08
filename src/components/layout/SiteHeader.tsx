@@ -28,8 +28,8 @@ const mobileUtilityItems = utilityItems.map(({ href, label }) => ({ href, label 
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-porcelain/90 backdrop-blur-md">
-      <Container className="py-3 lg:py-5">
+    <header className="sticky top-0 z-40 border-b border-border/65 bg-ivory/95 backdrop-blur-sm">
+      <Container className="py-3 lg:py-4">
         <MobileNavigation
           navigationItems={[...navigationItems]}
           utilityItems={mobileUtilityItems}
@@ -39,13 +39,13 @@ export function SiteHeader() {
           <Wordmark className="shrink-0" />
 
           <nav aria-label="Primary navigation" className="min-w-0 flex-1">
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 xl:gap-x-5">
               {navigationItems.map((item) => (
                 <li key={item.label}>
                   <Link
                     className={cn(
-                      "text-sm font-medium tracking-[0.02em] text-espresso/88 hover:text-wine",
-                      "rounded-full px-1 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wine/15",
+                      "rounded-full px-3 py-2 text-[0.95rem] font-medium tracking-[0.02em] text-espresso/88 hover:bg-porcelain/70 hover:text-wine",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wine/15",
                     )}
                     href={item.href}
                   >
@@ -56,9 +56,16 @@ export function SiteHeader() {
             </ul>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-1">
+          <div className="flex shrink-0 items-center gap-1.5">
             {utilityItems.map((item) => (
-              <IconButton aria-label={item.label} href={item.href} key={item.label} size="sm">
+              <IconButton
+                aria-label={item.label}
+                className="bg-porcelain/75"
+                href={item.href}
+                key={item.label}
+                size="sm"
+                variant="solid"
+              >
                 <item.icon className="h-4 w-4" />
               </IconButton>
             ))}

@@ -59,11 +59,11 @@ export function Drawer({
       {open ? (
         <div className="fixed inset-0 z-50">
           <motion.button
-            aria-label="Close navigation overlay"
-            className="absolute inset-0 bg-espresso/35 backdrop-blur-[2px]"
-            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            aria-label="Close navigation overlay"
+            className="absolute inset-0 bg-espresso/24"
             exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
             onClick={onClose}
             transition={{ duration: reduceMotion ? 0 : 0.18 }}
             type="button"
@@ -71,13 +71,13 @@ export function Drawer({
           <motion.div
             animate={{ opacity: 1, x: 0 }}
             aria-labelledby={titleId}
+            aria-modal="true"
             className={cn(
-              "absolute left-0 top-0 flex h-full w-[min(86vw,24rem)] flex-col border-r border-border bg-porcelain px-5 py-5 shadow-[var(--shadow-soft)]",
+              "absolute left-0 top-0 flex h-full w-[min(86vw,24rem)] flex-col border-r border-border/70 bg-ivory px-5 py-6 shadow-[var(--shadow-soft)]",
               className,
             )}
             exit={{ opacity: 0, x: reduceMotion ? 0 : -24 }}
             initial={{ opacity: 0, x: reduceMotion ? 0 : -24 }}
-            aria-modal="true"
             role="dialog"
             transition={{ duration: reduceMotion ? 0 : 0.22, ease: "easeOut" }}
           >
@@ -90,7 +90,7 @@ export function Drawer({
               </h2>
               <button
                 aria-label="Close menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white/75 text-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wine/20"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/80 bg-porcelain/70 text-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wine/20"
                 onClick={onClose}
                 ref={closeButtonRef}
                 type="button"

@@ -11,9 +11,9 @@
   --amare-champagne: #c2a06b;
   --amare-border: #e7ddd6;
   --amare-muted-text: #706361;
-  --shadow-soft: 0 24px 80px rgb(68 23 34 / 0.12);
-  --shadow-card: 0 16px 40px rgb(36 24 25 / 0.08);
-  --radius-frame: 2rem;
+  --shadow-soft: 0 24px 56px rgb(68 23 34 / 0.09);
+  --shadow-card: 0 12px 28px rgb(36 24 25 / 0.06);
+  --radius-frame: 1.75rem;
 }
 
 @theme inline {
@@ -41,17 +41,30 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top right, rgb(233 187 183 / 0.18), transparent 26%),
-    linear-gradient(180deg, rgb(255 253 252 / 0.55), transparent 24%),
+    radial-gradient(circle at top right, rgb(233 187 183 / 0.18), transparent 22%),
+    linear-gradient(180deg, rgb(255 253 252 / 0.5), transparent 18%),
     var(--amare-warm-ivory);
   color: var(--amare-espresso);
   font-family: var(--font-sans), sans-serif;
+  line-height: 1.6;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgb(201 130 132 / 0.28);
-  color: var(--amare-deep-berry);
+  background: var(--amare-wine);
+  color: var(--amare-porcelain);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 a,
@@ -71,6 +84,22 @@ select {
 :focus-visible {
   outline: 2px solid var(--amare-wine);
   outline-offset: 3px;
+}
+
+.section-space {
+  padding-block: clamp(4.75rem, 8vw, 9.5rem);
+}
+
+.section-space-tight {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

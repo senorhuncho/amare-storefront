@@ -11,7 +11,7 @@ export function Wordmark({ className }: Readonly<WordmarkProps>) {
     <Link
       aria-label="AMARÉ homepage"
       className={cn(
-        "font-display text-[1.9rem] leading-none tracking-[0.18em] text-espresso transition-colors hover:text-wine",
+        "font-display text-[2.1rem] leading-none tracking-[0.22em] text-espresso transition-colors hover:text-wine sm:text-[2.25rem]",
         className,
       )}
       href="/"
