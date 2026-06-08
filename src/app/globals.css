@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --amare-warm-ivory: #f8f3ed;
+  --amare-porcelain: #fffdfc;
+  --amare-petal-blush: #e9bbb7;
+  --amare-dusty-rose: #c98284;
+  --amare-wine: #672936;
+  --amare-deep-berry: #441722;
+  --amare-espresso: #241819;
+  --amare-champagne: #c2a06b;
+  --amare-border: #e7ddd6;
+  --amare-muted-text: #706361;
+  --shadow-soft: 0 24px 80px rgb(68 23 34 / 0.12);
+  --shadow-card: 0 16px 40px rgb(36 24 25 / 0.08);
+  --radius-frame: 2rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--amare-warm-ivory);
+  --color-porcelain: var(--amare-porcelain);
+  --color-blush: var(--amare-petal-blush);
+  --color-rose: var(--amare-dusty-rose);
+  --color-wine: var(--amare-wine);
+  --color-berry: var(--amare-deep-berry);
+  --color-espresso: var(--amare-espresso);
+  --color-champagne: var(--amare-champagne);
+  --color-border: var(--amare-border);
+  --color-muted: var(--amare-muted-text);
+  --font-display: var(--font-amare-display);
+  --font-sans: var(--font-amare-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--amare-border);
+}
+
+html {
+  background: var(--amare-warm-ivory);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgb(233 187 183 / 0.18), transparent 26%),
+    linear-gradient(180deg, rgb(255 253 252 / 0.55), transparent 24%),
+    var(--amare-warm-ivory);
+  color: var(--amare-espresso);
+  font-family: var(--font-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(201 130 132 / 0.28);
+  color: var(--amare-deep-berry);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amare-wine);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
